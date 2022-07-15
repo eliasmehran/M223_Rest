@@ -12,6 +12,8 @@ public class Equipment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String name;
+
     @ManyToOne
     @JoinColumn(name = "armor_id", referencedColumnName = "id")
     private Armor armor;
@@ -25,6 +27,10 @@ public class Equipment {
     private AppUser appUser;
 
     public Equipment() {
+    }
+
+    public Equipment(String name) {
+        this.name = name;
     }
 
     public long getId() {
@@ -53,5 +59,13 @@ public class Equipment {
 
     public void setAppUser(AppUser appUser) {
         this.appUser = appUser;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

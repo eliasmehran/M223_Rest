@@ -49,6 +49,7 @@ public class EquipmentController {
     public void editEquipment(@PathVariable long id, @RequestBody Equipment equipment) {
         Equipment existingEquipment = equipmentRepository.findById(id).get();
         Assert.notNull(existingEquipment, "Equipment not found");
+        existingEquipment.setName(equipment.getName());
         existingEquipment.setWeapon(equipment.getWeapon());
         existingEquipment.setArmor(equipment.getArmor());
         existingEquipment.setAppUser(equipment.getAppUser());

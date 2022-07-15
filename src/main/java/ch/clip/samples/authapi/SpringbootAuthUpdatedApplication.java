@@ -61,9 +61,9 @@ public class SpringbootAuthUpdatedApplication {
 			weaponRepository.save(huntinghorn);
 			weaponRepository.save(chargeblade);
 
-			equipmentService.createSet(new Equipment(), 3L, 3L, 1L);
-			equipmentService.createSet(new Equipment(), 1L, 1L ,3L);
-			equipmentService.createSet(new Equipment(), 2L, 2L, 2L);
+			equipmentService.createSet(new Equipment("LS loadout"), 3L, 3L, 1L);
+			equipmentService.createSet(new Equipment("CB loadout"), 1L, 1L ,3L);
+			equipmentService.createSet(new Equipment("HH loadout"), 2L, 2L, 2L);
 
 		};
 	}
