@@ -48,6 +48,7 @@ public class ArmorController {
         Assert.notNull(existingArmor, "Armor not found");
         existingArmor.setName(armor.getName());
         existingArmor.setDefence(armor.getDefence());
+        existingArmor.setImageLink(armor.getImageLink());
         armorRepository.save(existingArmor);
     }
 

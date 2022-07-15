@@ -64,6 +64,7 @@ public class WeaponController {
         Assert.notNull(existingWeapon, "Weapon not found");
         existingWeapon.setName(weapon.getName());
         existingWeapon.setDamage(weapon.getDamage());
+        existingWeapon.setImageLink(weapon.getImageLink());
         weaponRepository.save(existingWeapon);
     }
 

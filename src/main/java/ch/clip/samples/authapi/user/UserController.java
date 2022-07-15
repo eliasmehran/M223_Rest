@@ -1,8 +1,10 @@
 package ch.clip.samples.authapi.user;
 
 import ch.clip.samples.authapi.service.EquipmentService;
+import ch.clip.samples.authapi.weapon.Weapon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +28,15 @@ public class UserController {
 	public void signUp(@RequestBody AppUser user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		applicationUserRepository.save(user);
+	}
 
+	@PutMapping("/{id}")
+	public void editUser(@RequestParam Long id, @RequestBody AppUser user) {
+		AppUser existingUser = applicationUserRepository.findById(id).get();
+		Assert.notNull(existingUser, "Weapon not found");
+		existingUser.setUsername(user.getUsername());
+		existingUser.setPassword(user.getPassword());
+		applicationUserRepository.save(existingUser);
 	}
 
 //	@PostMapping("/{id}")

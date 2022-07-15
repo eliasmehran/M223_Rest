@@ -49,4 +49,12 @@ public class Weapon {
     public void setDamage(long defence) {
         this.damage = defence;
     }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
 }
