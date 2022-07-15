@@ -47,16 +47,16 @@ public class SpringbootAuthUpdatedApplication {
 			userRepository.save(u2);
 			userRepository.save(u3);
 
-			Armor damascus = new Armor("Damascus Beta Armor Set", 90);
-			Armor zorah = new Armor("Zorah Gamma Armor Set", 100);
-			Armor odogaron = new Armor("Odogaron Beta + Armor Set", 70);
+			Armor damascus = new Armor("Damascus Beta Armor Set", 90, "https://bit.ly/3cmjH48");
+			Armor zorah = new Armor("Zorah Gamma Armor Set", 100, "https://bit.ly/3AWs54m");
+			Armor odogaron = new Armor("Odogaron Beta + Armor Set", 70, "https://bit.ly/3aEe6FE");
 			armorRepository.save(damascus);
 			armorRepository.save(zorah);
 			armorRepository.save(odogaron);
 
-			Weapon longsword = new Weapon("Stahlurteil", 430);
-			Weapon huntinghorn = new Weapon("Trauerklang", 480);
-			Weapon chargeblade = new Weapon("Unheilskraft", 460);
+			Weapon longsword = new Weapon("Stahlurteil", 430, "https://bit.ly/3o7akYE");
+			Weapon huntinghorn = new Weapon("Trauerklang", 480, "https://bit.ly/3z7noDn");
+			Weapon chargeblade = new Weapon("Unheilskraft", 460, "https://bit.ly/3RBkTAF");
 			weaponRepository.save(longsword);
 			weaponRepository.save(huntinghorn);
 			weaponRepository.save(chargeblade);

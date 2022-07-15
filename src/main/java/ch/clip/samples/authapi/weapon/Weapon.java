@@ -12,7 +12,7 @@ public class Weapon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
+    private String name, imageLink;
     private long damage;
 
     @OneToMany(mappedBy="weapon")
@@ -24,9 +24,10 @@ public class Weapon {
         this.name = name;
     }
 
-    public Weapon(String name, long damage) {
+    public Weapon(String name, long damage, String imageLink) {
         this.name = name;
         this.damage = damage;
+        this.imageLink = imageLink;
     }
 
     public long getId() {

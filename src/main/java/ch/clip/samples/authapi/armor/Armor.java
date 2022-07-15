@@ -12,7 +12,7 @@ public class Armor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
+    private String name, imageLink;
     private long defence;
 
     @OneToMany(mappedBy="armor")
@@ -24,9 +24,10 @@ public class Armor {
         this.name = name;
     }
 
-    public Armor(String name, long defence) {
+    public Armor(String name, long defence, String imageLink) {
         this.name = name;
         this.defence = defence;
+        this.imageLink = imageLink;
     }
 
     public long getId() {
@@ -47,5 +48,13 @@ public class Armor {
 
     public void setDefence(long defence) {
         this.defence = defence;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 }
