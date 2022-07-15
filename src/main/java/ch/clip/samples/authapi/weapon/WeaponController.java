@@ -1,5 +1,6 @@
 package ch.clip.samples.authapi.weapon;
 
+import ch.clip.samples.authapi.equipment.Equipment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,17 @@ public class WeaponController {
     @GetMapping
     public List<Weapon> getWeapons() {
         return weaponRepository.findAll();  //weaponRepository.findAll();
+    }
+
+    /**
+     * gets specific piece by id
+     * @param id
+     */
+    @GetMapping("/{id}")
+    public Weapon getEquipmentById(@PathVariable long id) {
+        Weapon existingweapon = weaponRepository.findById(id).get();
+        Assert.notNull(existingweapon, "Weapon not found");
+        return existingweapon;
     }
 
     /**

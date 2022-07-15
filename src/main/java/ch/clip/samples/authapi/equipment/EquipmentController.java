@@ -1,5 +1,6 @@
 package ch.clip.samples.authapi.equipment;
 
+import ch.clip.samples.authapi.armor.Armor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,17 @@ public class EquipmentController {
     @PostMapping
     public void addEquipment(@RequestBody Equipment equipment) {
         equipmentRepository.save(equipment);
+    }
+
+    /**
+     * gets specific piece by id
+     * @param id
+     */
+    @GetMapping("/{id}")
+    public Equipment getEquipmentById(@PathVariable long id) {
+        Equipment existingEquipment = equipmentRepository.findById(id).get();
+        Assert.notNull(existingEquipment, "Loadout not found");
+        return existingEquipment;
     }
 
     /**
